@@ -1,0 +1,77 @@
+    rotate(x)
+    noFill()
+    rect(0,0,m,m)
+    m-=1
+    x+=1
+    if m  2
+        m=1000
+
+r=0
+
+h=2000
+g=0
+d=0
+f=1000
+
+x=0
+m=1000
+
+def setup():
+    size(2000,1000)
+    background(255)
+    frameRate(1200)
+def draw():
+    global x, g, d, f, h, m
+    rec(0,0,1000,2000)
+def rec(d,g,f,h):
+    rect(d,g,h,f)
+    if f > 1:
+        rec(d,g,f-5,h-10)
+        
+1 словари
+
+
+
+Yn=1
+Xn=1
+
+Sp=1
+
+d=0
+f=0
+
+j=0
+m=0
+Mp={'x' : 200, 'y' : 200}
+def setup():
+    size(400,400)
+    background(255)
+    frameRate(60)
+def draw():
+    global j, Xn, d, f, m, Sp, Yn, Mp
+    background(255)
+    fill(255,0,0)
+    rect(0,j,10,50)
+    fill(0,0,255)
+    rect(390,m,10,50)
+    fill(0,255,0)
+    ellipse(Mp['x'],Mp['y'],10,10)
+    w
+    Mp['x']+=Sp*Xn
+    Mp['y']+=Sp*Yn    
+    if Mp['x'] > 390 and Mp['y'] > m+1 and Mp['y'] < m+51 and Mp['x'] > 400:
+        Xn=-1
+        Yn=-1
+    if Mp['x'] <10 and Mp['y'] > j+1 and Mp['y'] < j+51 and Mp['x'] < 0:
+        Xn=1
+        Yn=1
+    if key == 'w':
+        j-=3
+    if key == 's':
+        j+=3
+    if keyCode == DOWN:
+        m+=3
+    if keyCode == UP:
+        m-=3
+        
+            
