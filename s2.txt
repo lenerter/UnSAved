@@ -1,0 +1,48 @@
+Yn=1
+Xn=1
+
+Sp=1
+
+d=0
+f=0
+
+j=0
+m=0
+
+r=0
+s=1
+Mp={'x' : 200, 'y' : 200}
+def setup():
+    size(400,400)
+    background(255)
+    frameRate(60)
+def draw():
+    global j, Xn, d, f, m, Sp, Yn, Mp, s, r
+    background(255)
+    fill(255,0,0)
+    rect(0,j,10,50)
+    fill(0,0,255)
+    rect(390,m,10,50)
+    fill(0,255,0)
+    ellipse(Mp['x'],Mp['y'],10,10)
+    Mp['x']+=Sp*Xn
+    Mp['y']+=Sp*Yn    
+    if Mp['x'] > 390 and Mp['y'] > m+1 and Mp['y'] < m+51 and Mp['x'] > 400:
+        Xn=-1
+        Yn=(random(-1,1))
+    if Mp['x'] <10 and Mp['y'] > j+1 and Mp['y'] < j+51 and Mp['x'] < 0:
+        Xn=1
+        Yn=(random(-1,1))
+    if Mp['y'] > 399:
+        Yn=-1
+    if Mp['y'] < 1:
+        Yn=1
+    if key == 'w':
+        j-=3
+    if key == 's':
+        j+=3
+    if keyCode == DOWN:
+        m+=3
+    if keyCode == UP:
+        m-=3
+        
